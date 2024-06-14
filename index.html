@@ -119,7 +119,8 @@ $(function () {
 	const themeToggle = document.querySelector('#themeToggle');
 	const darkModeMql = window.matchMedia('(prefers-color-scheme: dark)');
   
-	const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : userPreference(darkModeMql);
+	// const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : userPreference(darkModeMql);
+	const currentTheme = userPreference(darkModeMql)
   
 	if (currentTheme) {
 	  bodyElement.classList.add(currentTheme);
@@ -134,8 +135,10 @@ $(function () {
 		bodyElement.classList.add("dark");
 		return "dark"
 	  } else {
-		bodyElement.classList.remove("dark");
-		return ""
+		// bodyElement.classList.remove("dark");
+		// return ""
+	  	bodyElement.classList.add("dark");
+		return "dark"
 	  }
 	}
   
@@ -150,13 +153,13 @@ $(function () {
 		localStorage.setItem('theme', '');
 	  }
 	}
-  
+
 	themeToggle.addEventListener('change', themeSwitcher);
   </script>
   <!--theme switcher dark and light mode script//-->
 
 
-<section class="w3l-main-slider" id="home">
+<section class="w3l-main-slider">
   <!-- main-slider -->
   <div class="companies20-content">
     <div class="item text-center">
